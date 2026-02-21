@@ -1,0 +1,131 @@
+/* Section3 - YouTube infinite scroll, dark theme */
+.section3 {
+  background: #0a0a0f;
+  padding: 4rem 0 5rem;
+  font-family: 'Poppins', 'Inter', -apple-system, sans-serif;
+  overflow: hidden;
+}
+
+.section3-inner {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 1.5rem;
+}
+
+.section3-label {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: #3d2914;
+  border: 1px solid #ff8c00;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.75rem;
+}
+
+.section3-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.25rem;
+  line-height: 1.2;
+}
+
+.section3-highlight {
+  color: #ff8c00;
+}
+
+.section3-sub {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* Infinite scroll track */
+.section3-track-wrap {
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.section3-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: section3-scroll 20s linear infinite;
+}
+
+.section3-track.paused {
+  animation-play-state: paused;
+}
+
+@keyframes section3-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+/* Cards */
+.section3-card {
+  flex-shrink: 0;
+  width: 480px;
+  background: rgba(20, 20, 25, 0.9);
+  border-radius: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.section3-card:hover {
+  transform: scale(1.03);
+}
+
+.section3-card-thumb {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #111;
+}
+
+.section3-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.section3-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 1.25rem 1.25rem 0.5rem;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.section3-card-meta {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 1.25rem 0.25rem;
+}
+
+.section3-card-creator {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 1.25rem 1.25rem;
+}
+
+@media (max-width: 600px) {
+  .section3 {
+    padding: 3rem 0 4rem;
+  }
+
+  .section3-card {
+    width: 400px;
+  }
+}
