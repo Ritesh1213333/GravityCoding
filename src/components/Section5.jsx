@@ -1,4 +1,50 @@
+import { useState } from 'react'
 import './Section5.css'
+
+const countries = [
+  { code: '+91', flag: '🇮🇳', name: 'India' },
+  { code: '+1', flag: '🇺🇸', name: 'USA' },
+  { code: '+44', flag: '🇬🇧', name: 'UK' },
+  { code: '+61', flag: '🇦🇺', name: 'Australia' },
+  { code: '+1', flag: '🇨🇦', name: 'Canada' },
+  { code: '+49', flag: '🇩🇪', name: 'Germany' },
+  { code: '+33', flag: '🇫🇷', name: 'France' },
+  { code: '+39', flag: '🇮🇹', name: 'Italy' },
+  { code: '+34', flag: '🇪🇸', name: 'Spain' },
+  { code: '+31', flag: '🇳🇱', name: 'Netherlands' },
+  { code: '+7', flag: '🇷🇺', name: 'Russia' },
+  { code: '+86', flag: '🇨🇳', name: 'China' },
+  { code: '+81', flag: '🇯🇵', name: 'Japan' },
+  { code: '+82', flag: '🇰🇷', name: 'South Korea' },
+  { code: '+65', flag: '🇸🇬', name: 'Singapore' },
+  { code: '+971', flag: '🇦🇪', name: 'UAE' },
+  { code: '+966', flag: '🇸🇦', name: 'Saudi Arabia' },
+  { code: '+974', flag: '🇶🇦', name: 'Qatar' },
+  { code: '+20', flag: '🇪🇬', name: 'Egypt' },
+  { code: '+27', flag: '🇿🇦', name: 'South Africa' },
+  { code: '+234', flag: '🇳🇬', name: 'Nigeria' },
+  { code: '+55', flag: '🇧🇷', name: 'Brazil' },
+  { code: '+52', flag: '🇲🇽', name: 'Mexico' },
+  { code: '+92', flag: '🇵🇰', name: 'Pakistan' },
+  { code: '+880', flag: '🇧🇩', name: 'Bangladesh' },
+  { code: '+94', flag: '🇱🇰', name: 'Sri Lanka' },
+  { code: '+977', flag: '🇳🇵', name: 'Nepal' },
+  { code: '+60', flag: '🇲🇾', name: 'Malaysia' },
+  { code: '+62', flag: '🇮🇩', name: 'Indonesia' },
+  { code: '+66', flag: '🇹🇭', name: 'Thailand' },
+  { code: '+84', flag: '🇻🇳', name: 'Vietnam' },
+  { code: '+63', flag: '🇵🇭', name: 'Philippines' },
+  { code: '+98', flag: '🇮🇷', name: 'Iran' },
+  { code: '+90', flag: '🇹🇷', name: 'Turkey' },
+  { code: '+972', flag: '🇮🇱', name: 'Israel' },
+  { code: '+46', flag: '🇸🇪', name: 'Sweden' },
+  { code: '+47', flag: '🇳🇴', name: 'Norway' },
+  { code: '+45', flag: '🇩🇰', name: 'Denmark' },
+  { code: '+358', flag: '🇫🇮', name: 'Finland' },
+  { code: '+41', flag: '🇨🇭', name: 'Switzerland' },
+  { code: '+48', flag: '🇵🇱', name: 'Poland' },
+  { code: '+64', flag: '🇳🇿', name: 'New Zealand' },
+]
 
 const col1 = [
   {
@@ -217,6 +263,8 @@ function ScrollCol({ cards, direction }) {
 }
 
 function Section5() {
+  const [selectedCode, setSelectedCode] = useState('+91')
+
   return (
     <section className="section5">
       <div className="section5-bg">
@@ -244,11 +292,28 @@ function Section5() {
               </span>
               <input type="text" placeholder="Your Full Name" className="section5-input" />
             </div>
-            <div className="section5-field">
-              <span className="section5-field-icon">
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+            <div className="section5-phone-unified">
+              <span className="section5-phone-icon-wrap">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.773-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                </svg>
               </span>
-              <input type="tel" placeholder="Your Phone Number" className="section5-input" />
+              <span className="section5-phone-divider" />
+              <div className="section5-code-wrap">
+                <span className="section5-code-display">{selectedCode}</span>
+                <svg className="section5-code-arrow" viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg>
+                <select
+                  className="section5-country-select"
+                  value={selectedCode}
+                  onChange={e => setSelectedCode(e.target.value)}
+                >
+                  {countries.map((c, i) => (
+                    <option key={i} value={c.code}>{c.flag} {c.name} ({c.code})</option>
+                  ))}
+                </select>
+              </div>
+              <span className="section5-phone-divider" />
+              <input type="tel" placeholder="Phone Number" className="section5-phone-input" />
             </div>
             <div className="section5-field">
               <span className="section5-field-icon">
