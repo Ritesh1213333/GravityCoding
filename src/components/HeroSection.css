@@ -3,7 +3,8 @@
 .hero-hero {
   min-height: 100vh;
   height: 100vh;
-  background: #000;
+  background: #0c0c0f;
+
   position: relative;
   display: flex;
   flex-direction: column;
