@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import logo from '../assests/Group 2 1.png'
 import './Navbar.css'
 
@@ -10,7 +10,26 @@ const NAV_LINKS = [
 ]
 
 function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen]   = useState(false)
+  const [hidden, setHidden]       = useState(false)
+  const lastScrollY               = useRef(0)
+
+  // Hide on scroll down, show on scroll up
+  useEffect(() => {
+    const onScroll = () => {
+      const currentY = window.scrollY
+      if (currentY < 60) {
+        setHidden(false)
+      } else if (currentY > lastScrollY.current + 6) {
+        setHidden(true)
+      } else if (currentY < lastScrollY.current - 6) {
+        setHidden(false)
+      }
+      lastScrollY.current = currentY
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -28,7 +47,7 @@ function Navbar() {
 
   return (
     <>
-      <header className="nav-header">
+      <header className={`nav-header${hidden ? ' nav-header--hidden' : ''}`}>
         <a href="#" className="nav-brand">
           <img src={logo} alt="Gravity Coding" className="nav-logo" />
         </a>

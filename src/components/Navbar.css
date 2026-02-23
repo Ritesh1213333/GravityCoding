@@ -12,6 +12,13 @@
   background: rgba(10, 10, 10, 0.425);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  transform: translateY(0);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              background 0.3s ease;
+}
+
+.nav-header--hidden {
+  transform: translateY(-110%);
 }
 
 .nav-brand {

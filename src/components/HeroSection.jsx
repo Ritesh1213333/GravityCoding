@@ -71,8 +71,8 @@ function HeroSection() {
           </div>
 
           <h1 className="hero-heading">
-            <span className="hero-line hero-line-1">Become The Developer That</span>
-            <span className="hero-line hero-line-2"><span className="hero-line-2-blue">Tech Giants</span><span className="hero-line-2-light"> Want To Hire!</span></span>
+            <span className="hero-line hero-line-1">Get Placed At Your</span>
+            <span className="hero-line hero-line-2"><span className="hero-line-2-blue">Dream Company</span><span className="hero-line-2-light"> In 6 Months!</span></span>
           </h1>
 
           <p className="hero-community">
@@ -81,7 +81,6 @@ Master in-demand skills and land your dream role at top product companies.
 
           <div className="hero-cta-wrap">
             <a href="#" className="hero-cta">Start Journey →</a>
-            <a href="#" className="hero-cta-secondary">Explore Programs</a>
           </div>
 
           <div className="hero-features">

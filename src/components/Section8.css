@@ -1,0 +1,287 @@
+/* ============================================================
+   SECTION 8 — REVIEWS
+   ============================================================ */
+
+.section8 {
+  position: relative;
+  background: #0b0b0f;
+  padding: 5rem 0 5rem;
+  overflow: hidden;
+  font-family: 'Poppins', 'Inter', -apple-system, sans-serif;
+}
+
+.s8-glow-1 {
+  position: absolute;
+  top: -100px;
+  left: 5%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(73, 125, 255, 0.1) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.s8-glow-2 {
+  position: absolute;
+  bottom: -80px;
+  right: 5%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+/* ── Inner ── */
+.s8-inner {
+  position: relative;
+  z-index: 1;
+  padding: 0 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* ── Header ── */
+.s8-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.s8-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.s8-watermark-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.s8-watermark {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(3.5rem, 10vw, 7.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.s8-arrow {
+  width: 100px;
+  opacity: 0.55;
+  margin-left: 1rem;
+  transform: rotate(15deg) translateY(30px);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.s8-heading {
+  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.4;
+  margin: 0;
+  max-width: 520px;
+}
+
+.s8-highlight {
+  color: #497DFF;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(73, 125, 255, 0.4);
+  text-underline-offset: 4px;
+}
+
+.s8-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.8rem 1.8rem;
+  background: #497DFF;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.s8-cta:hover {
+  background: #3a6aed;
+  transform: translateY(-2px);
+}
+
+/* ── Swiper ── */
+.s8-swiper-wrap {
+  width: 100%;
+  padding-top: 8px;
+}
+
+.s8-swiper {
+  width: 100%;
+  padding-bottom: 3rem !important;
+  /* overflow: visible !important; */
+}
+
+.s8-swiper .swiper-wrapper {
+  overflow: visible;
+}
+
+.s8-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background 0.3s, width 0.3s;
+}
+
+.s8-dot.active {
+  background: #497DFF;
+  width: 24px;
+}
+
+/* ── Review Card ── */
+.s8-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+.s8-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  transition: border-color 0.25s, background 0.25s, transform 0.25s;
+}
+
+.s8-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(73, 125, 255, 0.3);
+  transform: translateY(-4px);
+}
+
+/* ── Stars ── */
+.s8-stars {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.s8-star {
+  width: 16px;
+  height: 16px;
+  color: #f59e0b;
+}
+
+/* ── Card Text ── */
+.s8-card-text {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+/* ── Author ── */
+.s8-card-author {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.s8-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid rgba(73, 125, 255, 0.3);
+}
+
+.s8-author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.s8-author-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.s8-author-role {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 400;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1280px) {
+  .s8-inner { padding: 0 5rem; }
+}
+
+@media (max-width: 1024px) {
+  .s8-inner     { padding: 0 3rem; }
+  .s8-watermark { white-space: normal; }
+}
+
+@media (max-width: 768px) {
+  .s8-inner { padding: 0 1.5rem; }
+
+  .s8-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .s8-header-left {
+    align-items: center;
+  }
+
+  .s8-watermark-wrap {
+    justify-content: center;
+  }
+
+  .s8-arrow {
+    display: none;
+  }
+
+  .s8-watermark {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    text-align: center;
+  }
+
+  .s8-heading {
+    line-height: 1.6;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .s8-inner { padding: 0 1.25rem; }
+}
