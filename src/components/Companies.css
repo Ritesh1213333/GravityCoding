@@ -33,15 +33,25 @@
   display: flex;
   align-items: center;
   width: max-content;
+  flex-shrink: 0;
   will-change: transform;
+  animation: comp-marquee 40s linear infinite;
+}
+
+@keyframes comp-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* ── Logo Item ── */
 .comp-logo-item {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  padding: 0 2.8rem;
+  justify-content: center;
+  flex: 0 0 200px;
+  width: 200px;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
   opacity: 0.35;
   transition: opacity 0.3s ease;
   cursor: default;
@@ -51,11 +61,18 @@
   opacity: 0.85;
 }
 
+.comp-logo-item--tcs .comp-logo-icon {
+  height: 100px;
+  max-width: 140px;
+}
+
 /* ── Icon ── */
 .comp-logo-icon {
-  width: auto;
-  height: 28px;
+  width: 100%;
+  max-width: 120px;
+  height: 32px;
   object-fit: contain;
+  object-position: center;
   flex-shrink: 0;
   filter: brightness(2);
 }
@@ -72,7 +89,7 @@
 
 /* ── Name ── */
 .comp-logo-name {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.9);

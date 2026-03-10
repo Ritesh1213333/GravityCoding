@@ -4,30 +4,30 @@ import './AchievementSection.css'
 const allPages = [
   /* ── Page 1 ── */
   [
-    { url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80', label: 'Office Opening',       tag: 'Jabalpur HQ' },
-    { url: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80', label: 'Mega Seminar',         tag: '500+ Students' },
-    { url: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80', label: 'International Webinar',tag: 'Nepal • Dubai • USA' },
-    { url: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80', label: 'Hackathon 2024',       tag: 'GC Students Won' },
-    { url: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80', label: 'Live Workshop',        tag: 'Hands-on Coding' },
-    { url: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80', label: 'Internship Drive',      tag: 'Industry Partners' },
+    { url: '/events/IMG_20260125_175934_933.webp', label: 'Event', tag: 'Gravity Coding' },
+    { url: '/events/IMG_20241112_163920_607.webp', label: 'Workshop', tag: 'November 2024' },
+    { url: '/events/IMG_20241114_160841_409.webp', label: 'Session', tag: 'Hands-on' },
+    { url: '/events/IMG_20251010_185521.webp', label: 'Event', tag: 'October 2025' },
+    { url: '/events/IMG_20250526_112902_962.webp', label: 'Workshop', tag: 'May 2025' },
+    { url: '/events/IMG_20250526_113942_503.webp', label: 'Training', tag: 'Batch 2025' },
   ],
   /* ── Page 2 ── */
   [
-    { url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80', label: 'Team Collaboration',   tag: 'Sprint Day' },
-    { url: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80', label: 'Training Session',     tag: 'Batch 2024' },
-    { url: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&q=80', label: 'Award Ceremony',       tag: 'Top Performers' },
-    { url: 'https://images.unsplash.com/photo-1605379399642-870262d3d051?w=800&q=80', label: 'Coding Marathon',      tag: '48hrs Hackathon' },
-    { url: 'https://images.unsplash.com/photo-1558008258-3256797b43f3?w=800&q=80', label: 'Campus Connect',        tag: 'College Outreach' },
-    { url: 'https://images.unsplash.com/photo-1558403194-611308249627?w=800&q=80', label: 'Placement Celebration',  tag: 'Dream Job!' },
+    { url: '/events/IMG-20251208-WA0090.webp', label: 'Event', tag: 'December 2025' },
+    { url: '/events/IMG-20241120-WA0005.webp', label: 'Meetup', tag: 'November 2024' },
+    { url: '/events/IMG_20260125_184439_538.webp', label: 'Event', tag: 'January 2026' },
+    { url: '/events/IMG_20241116_134452_771.webp', label: 'Session', tag: 'Training Day' },
+    { url: '/events/IMG_20250526_113626_561.webp', label: 'Workshop', tag: 'Campus' },
+    { url: '/events/IMG_20241112_160141_561.webp', label: 'Event', tag: 'Jabalpur HQ' },
   ],
   /* ── Page 3 ── */
   [
-    { url: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80', label: 'Tech Talk',            tag: 'Industry Expert' },
-    { url: 'https://images.unsplash.com/photo-1560472355-536de3962603?w=800&q=80', label: 'Product Launch',        tag: 'Student Project' },
-    { url: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80', label: 'Classroom Session',    tag: 'Daily Grind' },
-    { url: 'https://images.unsplash.com/photo-1573166953836-06864dc68207?w=800&q=80', label: 'Mentorship Program',   tag: 'One-on-One' },
-    { url: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&q=80', label: 'Global Webinar',         tag: '1000+ Joined' },
-    { url: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80', label: 'Student Meetup',       tag: 'Community' },
+    { url: '/events/IMG-20250807-WA0031.webp', label: 'Event', tag: 'August 2025' },
+    { url: '/events/IMG_20241115_151229_438.webp', label: 'Session', tag: 'Community' },
+    { url: '/events/IMG_20241115_141813_379.webp', label: 'Workshop', tag: 'Coding' },
+    { url: '/events/IMG_20250526_132850_253.webp', label: 'Event', tag: 'May 2025' },
+    { url: '/events/DSC_0227.webp', label: 'Event', tag: 'Gravity Coding' },
+    { url: '/events/IMG_20251229_170446_530.webp', label: 'Meetup', tag: 'December 2025' },
   ],
 ]
 

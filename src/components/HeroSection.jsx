@@ -60,10 +60,10 @@ function HeroSection() {
 
           <div className="hero-stats">
             <div className="hero-avatars">
-              <img src="https://i.pravatar.cc/80?img=1" alt="" className="hero-avatar" />
-              <img src="https://i.pravatar.cc/80?img=2" alt="" className="hero-avatar" />
-              <img src="https://i.pravatar.cc/80?img=3" alt="" className="hero-avatar" />
-              <img src="https://i.pravatar.cc/80?img=4" alt="" className="hero-avatar" />
+              <img src="/pro06.webp" alt="" className="hero-avatar" />
+              <img src="/pro07.webp" alt="" className="hero-avatar" />
+              <img src="/pro08.webp" alt="" className="hero-avatar" />
+              <img src="/pro09.webp" alt="" className="hero-avatar" />
             </div>
             <p className="hero-stats-text">
               <span className="hero-stats-highlight">50K+</span> developers building real-world skills

@@ -4,57 +4,43 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import './OurCourseSection.css'
 import courseArrow from '../assests/course_arrow.png'
-import courseThumb from '../assests/Rectangle 21.jpg'
+// import courseThumb from '/Frontend.webp'
 
 const courses = [
   {
-    image: courseThumb,
-    title: 'Front-End Domination: Create Anything with Code',
-    tags: ['Web Development', 'Animation', 'Design'],
-    instructor: 'Amarjeet Ch.',
-    price: '₹4999',
+    image: "/Frontend.webp",
+    title: 'Full Stack Web Development Bootcamp: Build Real-World Web Applications',
+    tags: ['Frontend', 'Backend', 'JavaScript', 'Databases'],
+    instructor: 'Gravity Coding',
+    price: '₹14,999',
   },
   {
-    image: courseThumb,
-    title: 'Front-End Domination: Create Anything with Code',
-    tags: ['Web Development', 'Animation', 'Design'],
-    instructor: 'Amarjeet Ch.',
-    price: '₹4999',
+    image: "/ritesh.webp",
+    title: 'C Programming Mastery: Build Logic & Master Coding Fundamentals',
+    tags: ['C Programming', 'Problem Solving', 'Programming Fundamentals'],
+    instructor: 'Ritesh Kumar Das',
+    price: '₹499',
   },
   {
-    image: courseThumb,
-    title: 'Front-End Domination: Create Anything with Code',
-    tags: ['Web Development', 'Animation', 'Design'],
-    instructor: 'Amarjeet Ch.',
-    price: '₹4999',
+    image: "/paramjeet.webp",
+    title: 'Frontend Web Development with React: Build Modern & Interactive Websites',
+    tags: ['HTML', 'CSS', 'JavaScript', 'React JS', 'Animation', 'Responsive'],
+    instructor: 'Paramjeet Chaudhary',
+    price: '₹9,999',
   },
   {
-    image: courseThumb,
-    title: 'Front-End Domination: Create Anything with Code',
-    tags: ['Web Development', 'Animation', 'Design'],
-    instructor: 'Amarjeet Ch.',
-    price: '₹4999',
+    image: "/priya.webp",
+    title: 'C++ with DSA: Master Data Structures & Problem Solving',
+    tags: ['C++ Programming', 'Data Structures', 'Algorithms'],
+    instructor: 'Priya Kumari',
+    price: '₹12,999',
   },
   {
-    image: courseThumb,
-    title: 'Front-End Domination: Create Anything with Code',
-    tags: ['Web Development', 'Animation', 'Design'],
-    instructor: 'Amarjeet Ch.',
-    price: '₹4999',
-  },
-  {
-    image: courseThumb,
-    title: 'Front-End Domination: Create Anything with Code',
-    tags: ['Web Development', 'Animation', 'Design'],
-    instructor: 'Amarjeet Ch.',
-    price: '₹4999',
-  },
-  {
-    image: courseThumb,
-    title: 'Front-End Domination: Create Anything with Code',
-    tags: ['Web Development', 'Animation', 'Design'],
-    instructor: 'Amarjeet Ch.',
-    price: '₹4999',
+    image: "/sourabh.webp",
+    title: 'Python Programming: From Basics to Real-World Applications',
+    tags: ['Python', 'Programming', 'Problem Solving', 'Automation'],
+    instructor: 'Sourabh Sahu',
+    price: '₹6,999',
   },
 ]
 
