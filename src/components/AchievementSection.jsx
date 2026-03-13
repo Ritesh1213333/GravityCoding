@@ -4,12 +4,12 @@ import './AchievementSection.css'
 const allPages = [
   /* ── Page 1 ── */
   [
-    { url: '/events/IMG_20260125_175934_933.webp', label: 'Event', tag: 'Gravity Coding' },
+    { url: '/events/IMG-20250526-WA0008.jpg', label: 'Event', tag: 'Gravity Coding' },
     { url: '/events/IMG_20241112_163920_607.webp', label: 'Workshop', tag: 'November 2024' },
     { url: '/events/IMG_20241114_160841_409.webp', label: 'Session', tag: 'Hands-on' },
-    { url: '/events/IMG_20251010_185521.webp', label: 'Event', tag: 'October 2025' },
-    { url: '/events/IMG_20250526_112902_962.webp', label: 'Workshop', tag: 'May 2025' },
-    { url: '/events/IMG_20250526_113942_503.webp', label: 'Training', tag: 'Batch 2025' },
+    { url: '/events/DSC_0115.webp', label: 'Event', tag: 'October 2025' },
+    { url: '/events/IMG_20250526_113942_503.webp', label: 'Workshop', tag: 'May 2025' },
+    { url: '/events/IMG_20250526_132903_282.webp', label: 'Training', tag: 'Batch 2025' },
   ],
   /* ── Page 2 ── */
   [
@@ -28,6 +28,17 @@ const allPages = [
     { url: '/events/IMG_20250526_132850_253.webp', label: 'Event', tag: 'May 2025' },
     { url: '/events/DSC_0227.webp', label: 'Event', tag: 'Gravity Coding' },
     { url: '/events/IMG_20251229_170446_530.webp', label: 'Meetup', tag: 'December 2025' },
+  ],
+
+  //page 4 
+
+    [
+    { url: '/events/IMG_20241120_141311_098.webp', label: 'Event', tag: 'August 2025' },
+    { url: '/events/Image2026-03-14.webp', label: 'Session', tag: 'Community' },
+    { url: '/events/Img_param_.webp', label: 'Workshop', tag: 'Coding' },
+    { url: '/events/IMG-20250520-WA0004.webp', label: 'Event', tag: 'May 2025' },
+    { url: '/events/Image2026.webp', label: 'Event', tag: 'Gravity Coding' },
+    { url: '/events/IMG34534.webp', label: 'Meetup', tag: 'December 2025' },
   ],
 ]
 
