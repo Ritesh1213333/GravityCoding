@@ -9,6 +9,8 @@ import Section5 from './components/Section5'
 import Section8 from './components/Section8'
 import Footer from './components/Footer'
 import PrivacyPolicy from './components/PrivacyPolicy'
+import TermsAndConditions from './components/TermsAndConditions'
+import PricingRefundPolicy from './components/PricingRefundPolicy'
 
 const Home = () => (
   <>
@@ -30,6 +32,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="/pricing-refund-policy" element={<PricingRefundPolicy />} />
         </Routes>
         <Footer />
       </div>

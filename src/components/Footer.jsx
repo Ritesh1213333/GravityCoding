@@ -41,8 +41,8 @@ function Footer() {
               <li><Link to="/">About Us</Link></li>
               <li><Link to="/">Support</Link></li>
               <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-              <li><Link to="/">Terms and Condition</Link></li>
-              <li><Link to="/">Pricing and Refund</Link></li>
+              <li><Link to="/terms-and-conditions">Terms and Condition</Link></li>
+              <li><Link to="/pricing-refund-policy">Pricing and Refund</Link></li>
             </ul>
           </div>
 
@@ -73,7 +73,7 @@ function Footer() {
           <p className="footer-copy">© All rights reserved. Skillverse Gravity Coding 2025</p>
           <div className="footer-legal">
             <a href="#">Imprint</a>
-            <a href="#">Terms</a>
+            <Link to="/terms-and-conditions">Terms</Link>
             <Link to="/privacy-policy">Privacy Policy</Link>
             <a href="#">Cookie Settings</a>
           </div>
