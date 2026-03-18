@@ -12,6 +12,9 @@ import PrivacyPolicy from './components/PrivacyPolicy'
 import TermsAndConditions from './components/TermsAndConditions'
 import PricingRefundPolicy from './components/PricingRefundPolicy'
 
+import SignIn from './components/SignIn'
+import SignUp from './components/SignUp'
+
 const Home = () => (
   <>
     <HeroSection />
@@ -31,6 +34,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/pricing-refund-policy" element={<PricingRefundPolicy />} />

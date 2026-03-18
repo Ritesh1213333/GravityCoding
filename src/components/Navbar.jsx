@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../assests/Group 2 1.png'
 import './Navbar.css'
 
 const NAV_LINKS = [
-  { label: 'Home', href: '#', active: true },
+  { label: 'Home', href: '/', active: true },
   { label: 'Brand', href: '#' },
   { label: 'Courses', href: '#' },
   { label: 'Contact Now', href: '#' },
@@ -48,27 +49,27 @@ function Navbar() {
   return (
     <>
       <header className={`nav-header${hidden ? ' nav-header--hidden' : ''}`}>
-        <a href="#" className="nav-brand">
+        <Link to="/" className="nav-brand">
           <img src={logo} alt="Gravity Coding" className="nav-logo" />
-        </a>
+        </Link>
 
         <nav className="nav-desktop">
           <ul className="nav-list">
             {NAV_LINKS.map((item) => (
               <li key={item.label}>
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className={`nav-link ${item.active ? 'active' : ''}`}
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
-        <button className="nav-cta nav-cta-desktop">
+        <Link to="/signin" className="nav-cta nav-cta-desktop">
           Sign In <span>→</span>
-        </button>
+        </Link>
 
         <button
           className={`nav-toggle ${menuOpen ? 'open' : ''}`}
@@ -89,9 +90,9 @@ function Navbar() {
       >
         <div className="nav-overlay-inner">
           <div className="nav-overlay-header">
-            <a href="#" className="nav-overlay-logo" onClick={closeMenu}>
+            <Link to="/" className="nav-overlay-logo" onClick={closeMenu}>
               <img src={logo} alt="Gravity Coding" className="nav-logo" />
-            </a>
+            </Link>
             <button
               className="nav-overlay-close"
               onClick={closeMenu}
@@ -103,19 +104,19 @@ function Navbar() {
           <ul className="nav-overlay-list">
             {NAV_LINKS.map((item) => (
               <li key={item.label}>
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className={`nav-link ${item.active ? 'active' : ''}`}
                   onClick={closeMenu}
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
-          <button className="nav-overlay-cta" onClick={closeMenu}>
+          <Link to="/signin" className="nav-overlay-cta" onClick={closeMenu}>
             Sign In
-          </button>
+          </Link>
         </div>
       </div>
     </>
