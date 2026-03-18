@@ -1,5 +1,6 @@
 import './Footer.css'
 import footerLogo from '../assests/Group 2 1.png'
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -37,11 +38,11 @@ function Footer() {
           <div className="footer-col">
             <h4 className="footer-heading">COMPANY</h4>
             <ul className="footer-links">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms and Condition</a></li>
-              <li><a href="#">Pricing and Refund</a></li>
+              <li><Link to="/">About Us</Link></li>
+              <li><Link to="/">Support</Link></li>
+              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/">Terms and Condition</Link></li>
+              <li><Link to="/">Pricing and Refund</Link></li>
             </ul>
           </div>
 
@@ -59,9 +60,9 @@ function Footer() {
             <h4 className="footer-heading">Get in Touch</h4>
             <ul className="footer-contact">
               <li><a href="tel:+917462380649">+91 7462380649</a></li>
-              <li><a href="tel:+917462380649">+91 7462380649</a></li>
-              <li><a href="mailto:contact@gravitycoding.com">contact@gravitycoding.com</a></li>
-              <li>23-B, Indrapuri Sector C,<br />Bhopal(MP), 462021</li>
+              <li><a href="tel:+917462380649">+91 6260259118</a></li>
+              <li><a href="mailto:gravitycodingschool@gmail.com">gravitycodingschool@gmail.com</a></li>
+              <li>Add : Sai Mandir Chouraha, Lamheta Rd, Sagra, Jabalpur, Madhya Pradesh 482003</li>
             </ul>
             <a href="#" className="footer-cta">Contact us</a>
           </div>
@@ -73,7 +74,7 @@ function Footer() {
           <div className="footer-legal">
             <a href="#">Imprint</a>
             <a href="#">Terms</a>
-            <a href="#">Privacy Policy</a>
+            <Link to="/privacy-policy">Privacy Policy</Link>
             <a href="#">Cookie Settings</a>
           </div>
         </div>
