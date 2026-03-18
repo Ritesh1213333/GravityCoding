@@ -1,5 +1,5 @@
 .privacy-container {
-    padding: 140px 7rem 80px;
+    padding: 100px 7rem 80px;
     background: #0a0a0a;
     color: #e0e0e0;
     min-height: 100vh;
@@ -24,12 +24,7 @@
     width: 100%;
     position: relative;
     z-index: 1;
-    background: rgba(20, 20, 20, 0.6);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    padding: 60px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    padding: 0;
     animation: fadeIn 0.8s ease-out;
 }
 
@@ -41,8 +36,7 @@
 .privacy-header {
     text-align: center;
     margin-bottom: 50px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 .privacy-header h1 {
@@ -109,11 +103,8 @@
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 25px;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    gap: 30px;
+    padding: 20px 0;
 }
 
 .info-item {
@@ -161,17 +152,14 @@
 
 .contact-prompt {
     font-style: italic;
-    background: rgba(73, 125, 255, 0.1);
-    padding: 15px 20px;
-    border-left: 4px solid #497DFF;
-    border-radius: 4px;
+    padding: 10px 0;
+    border-left: 3px solid #497DFF;
+    padding-left: 20px;
     margin-top: 20px;
 }
 
 .contact-info {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 20px;
-    border-radius: 12px;
+    padding: 10px 0;
 }
 
 .privacy-page-footer {
