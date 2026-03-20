@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './Section3.css'
-import rect21 from '../assests/Rectangle 21.jpg'
-import yt1 from '../assests/Youtube_image1.png'
-import yt2 from '../assests/Youtube_image2.png'
+import rect21 from '../../../assests/Rectangle 21.jpg'
+import yt1 from '../../../assests/Youtube_image1.png'
+import yt2 from '../../../assests/Youtube_image2.png'
 
 const cards = [
   { image: rect21, title: 'Hackathons are a waste of time!', views: '50k', likes: '2.1k', creator: 'Gravity Coding' },

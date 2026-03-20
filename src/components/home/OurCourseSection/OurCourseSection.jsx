@@ -3,7 +3,7 @@ import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import './OurCourseSection.css'
-import courseArrow from '../assests/course_arrow.png'
+import courseArrow from '../../../assests/course_arrow.png'
 // import courseThumb from '/Frontend.webp'
 
 const courses = [

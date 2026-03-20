@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import courseArrow from '../assests/course_arrow.png'
+import courseArrow from '../../../assests/course_arrow.png'
 import './Section7.css'
 
 gsap.registerPlugin(ScrollTrigger)

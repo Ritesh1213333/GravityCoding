@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../assests/Group 2 1.png'
+import logo from '../../../assests/Group 2 1.png'
 import './Navbar.css'
 
 const NAV_LINKS = [
   { label: 'Home', href: '/', active: true },
+  { label: 'About', href: '/about' },
   { label: 'Brand', href: '#' },
   { label: 'Courses', href: '#' },
   { label: 'Contact Now', href: '#' },

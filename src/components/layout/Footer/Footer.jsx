@@ -1,5 +1,5 @@
 import './Footer.css'
-import footerLogo from '../assests/Group 2 1.png'
+import footerLogo from '../../../assests/Group 2 1.png'
 import { Link } from 'react-router-dom'
 
 function Footer() {
@@ -70,7 +70,7 @@ function Footer() {
 
         {/* Bottom Bar */}
         <div className="footer-bottom">
-          <p className="footer-copy">© All rights reserved. Skillverse Gravity Coding 2025</p>
+          <p className="footer-copy">© All rights reserved. Skillsvarz Gravity Coding Pvt. Ltd. 2025</p>
           <div className="footer-legal">
             <a href="#">Imprint</a>
             <Link to="/terms-and-conditions">Terms</Link>

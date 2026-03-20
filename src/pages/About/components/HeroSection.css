@@ -1,0 +1,130 @@
+.about-hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 5%;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  background: #030407; /* Dark base */
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.about-hero-section .protocol-tab {
+  font-family: 'Inter', monospace;
+  color: #4A6CF7; 
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.about-hero-section .hero-title {
+  font-size: clamp(3.5rem, 8vw, 8rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0 0 4rem 0;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+}
+
+.about-hero-section .title-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em;
+}
+
+.about-hero-section .title-solid {
+  color: #E2E8F0;
+}
+
+.about-hero-section .title-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px #2A3B8C; 
+}
+
+.hero-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.about-hero-section .hero-description {
+  max-width: 550px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #8E95A5;
+  margin: 0;
+  font-weight: 400;
+}
+
+.line-connector {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #1A223E; 
+  margin: 0 3rem;
+  margin-bottom: 1.25rem; 
+}
+
+.scroll-btn-box {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #1A223E;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4A6CF7;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 0.25rem;
+}
+
+.scroll-btn-box:hover {
+  background-color: rgba(74, 108, 247, 0.1);
+  border-color: #4A6CF7;
+}
+
+.scroll-btn-box svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 900px) {
+  .hero-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  
+  .line-connector {
+    display: none;
+  }
+  
+  .scroll-btn-box {
+    align-self: flex-start;
+  }
+}

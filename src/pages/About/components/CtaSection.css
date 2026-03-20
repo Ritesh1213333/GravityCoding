@@ -1,0 +1,103 @@
+.cta-section {
+  background-color: #030407; /* Match the dark context */
+  padding: 12rem 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle ambient glow behind text */
+.cta-ambient-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 50vw;
+  max-width: 800px;
+  max-height: 800px;
+  background: radial-gradient(circle at center, rgba(82, 73, 246, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-title {
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin: 0;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-title-light {
+  color: #E2E8F0;
+}
+
+.cta-title-accent {
+  color: transparent;
+  background-image: url("https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bHVmYXF6Y3VzNzc5cDFxYWVkMm9lb21kamt6b3FreDE4bmc4dWFjciZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/3o7WIstFhcFoyivPnW/giphy.gif");
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 0 20px rgba(82, 73, 246, 0.4));
+  margin-top: -0.05em; /* snug lines */
+}
+
+@keyframes textShine {
+  to {
+    background-position: 300% center;
+  }
+}
+
+.cta-button {
+  background-color: #5249F6;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 9999px;
+  padding: 1rem 2.8rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 8px 32px rgba(82, 73, 246, 0.4);
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #5E56FA;
+  box-shadow: 0 12px 40px rgba(82, 73, 246, 0.6);
+  transform: translateY(-2px);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+}
+
+.cta-button-arrow {
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover .cta-button-arrow {
+  transform: translateX(4px);
+}
