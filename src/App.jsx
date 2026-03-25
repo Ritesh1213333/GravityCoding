@@ -1,3 +1,4 @@
+import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/layout/Navbar/Navbar'
 import HeroSection from './components/home/HeroSection/HeroSection'
@@ -15,6 +16,8 @@ import PricingRefundPolicy from './components/legal/PricingRefundPolicy/PricingR
 import SignIn from './components/auth/SignIn/SignIn'
 import SignUp from './components/auth/SignUp/SignUp'
 import About from './pages/About/About'
+import Courses from './pages/Courses/Courses'
+import Contact from './pages/Contact/Contact'
 
 const Home = () => (
   <>
@@ -38,6 +41,8 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/about" element={<About />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/pricing-refund-policy" element={<PricingRefundPolicy />} />
