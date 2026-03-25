@@ -15,11 +15,20 @@ const Section8 = lazy(() => import('./components/home/Section8/Section8'))
 
 // Lazy Load Pages
 const About = lazy(() => import('./pages/About/About'))
+const Courses = lazy(() => import('./pages/Courses/Courses'))
+const Contact = lazy(() => import('./pages/Contact/Contact'))
 const SignIn = lazy(() => import('./components/auth/SignIn/SignIn'))
 const SignUp = lazy(() => import('./components/auth/SignUp/SignUp'))
 const PrivacyPolicy = lazy(() => import('./components/legal/PrivacyPolicy/PrivacyPolicy'))
 const TermsAndConditions = lazy(() => import('./components/legal/TermsAndConditions/TermsAndConditions'))
 const PricingRefundPolicy = lazy(() => import('./components/legal/PricingRefundPolicy/PricingRefundPolicy'))
+
+// Admin Pages
+const AdminLogin = lazy(() => import('./pages/Admin/AdminLogin'))
+const AdminDashboard = lazy(() => import('./pages/Admin/AdminDashboard'))
+const Inquiries = lazy(() => import('./pages/Admin/Inquiries'))
+
+
 
 const Home = () => (
   <>
@@ -44,10 +53,19 @@ function App() {
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/about" element={<About />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/pricing-refund-policy" element={<PricingRefundPolicy />} />
+            
+            {/* Admin Routes */}
+            <Route path="/admin" element={<AdminLogin />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/inquiries" element={<Inquiries />} />
           </Routes>
+
+
         </Suspense>
         <Footer />
       </div>
@@ -56,3 +74,4 @@ function App() {
 }
 
 export default App
+

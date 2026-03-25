@@ -1,4 +1,6 @@
 import footerLogo from '../../../assests/Gc_logo.png'
+
+
 import { Link } from 'react-router-dom'
 import { FaInstagram, FaLinkedinIn, FaDiscord, FaYoutube, FaTwitter, FaFacebookF, FaGithub } from 'react-icons/fa'
 
