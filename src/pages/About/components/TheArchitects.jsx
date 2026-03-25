@@ -7,28 +7,28 @@ const TheArchitects = () => {
     {
       name: "JAXSON VANE",
       role: "FOUNDER // SYSTEM LEAD",
-      image: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?q=80&w=800&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?q=80&w=400&auto=format&fit=crop",
       isIllustration: true,
 
     },
     {
       name: "ARIA KAGE",
       role: "CORE PROTOCOL ARCHITECT",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop",
       isIllustration: false,
 
     },
     {
       name: "LEO STERLING",
       role: "DEPLOYMENT STRATEGIST",
-      image: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=800&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=400&auto=format&fit=crop",
       isIllustration: true,
 
     },
     {
       name: "SLOANE REYES",
       role: "EXPERIENCE LEAD",
-      image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=800&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=400&auto=format&fit=crop",
       isIllustration: true,
 
     }

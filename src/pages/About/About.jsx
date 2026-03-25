@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import './About.css';
 import HeroSection from './components/HeroSection';
 
-import CoreDirectives from './components/CoreDirectives';
-import ImpactStats from './components/ImpactStats';
-import TheArchitects from './components/TheArchitects';
-import CtaSection from './components/CtaSection';
+const CoreDirectives = lazy(() => import('./components/CoreDirectives'));
+const ImpactStats = lazy(() => import('./components/ImpactStats'));
+const TheArchitects = lazy(() => import('./components/TheArchitects'));
+const CtaSection = lazy(() => import('./components/CtaSection'));
 
 const About = () => {
   return (
@@ -13,17 +13,19 @@ const About = () => {
       {/* SECTION 1: HERO SECTION */}
       <HeroSection />
 
-      {/* SECTION 2: CORE DIRECTIVES */}
-      <CoreDirectives />
+      <Suspense fallback={<div className="section-placeholder">Loading performance data...</div>}>
+        {/* SECTION 2: CORE DIRECTIVES */}
+        <CoreDirectives />
 
-      {/* SECTION 3: IMPACT STATS */}
-      <ImpactStats />
+        {/* SECTION 3: IMPACT STATS */}
+        <ImpactStats />
 
-      {/* SECTION 4: THE ARCHITECTS */}
-      <TheArchitects />
+        {/* SECTION 4: THE ARCHITECTS */}
+        <TheArchitects />
 
-      {/* SECTION 5: CTA */}
-      <CtaSection />
+        {/* SECTION 5: CTA */}
+        <CtaSection />
+      </Suspense>
     </div>
   );
 };

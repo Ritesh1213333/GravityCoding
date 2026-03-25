@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../../../assests/Group 2 1.png'
+import logo from '../../../assests/Gc_logo.png'
 import './Navbar.css'
 
 const NAV_LINKS = [

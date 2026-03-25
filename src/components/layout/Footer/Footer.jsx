@@ -1,5 +1,5 @@
 import './Footer.css'
-import footerLogo from '../../../assests/Group 2 1.png'
+import footerLogo from '../../../assests/Gc_logo.png'
 import { Link } from 'react-router-dom'
 
 function Footer() {

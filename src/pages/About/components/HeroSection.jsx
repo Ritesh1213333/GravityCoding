@@ -1,19 +1,22 @@
-import React from 'react';
-import DarkVeil from './DarkVeil';
+import React, { Suspense, lazy } from 'react';
+const DarkVeil = lazy(() => import('./DarkVeil'));
 import './HeroSection.css';
 
 const HeroSection = () => {
   return (
     <section className="about-hero-section">
       <div className="hero-background">
-        <DarkVeil
-          hueShift={0}
-          noiseIntensity={0}
-          scanlineIntensity={0}
-          speed={0.5}
-          scanlineFrequency={0}
-          warpAmount={0}
-        />
+        <Suspense fallback={<div style={{ background: '#030407', width: '100%', height: '100%' }} />}>
+          <DarkVeil
+            hueShift={0}
+            noiseIntensity={0}
+            scanlineIntensity={0}
+            speed={0.5}
+            scanlineFrequency={0}
+            warpAmount={0}
+            resolutionScale={0.5}
+          />
+        </Suspense>
       </div>
       <div className="hero-container">
         <div className="protocol-tab">

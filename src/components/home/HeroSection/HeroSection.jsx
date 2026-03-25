@@ -60,10 +60,10 @@ function HeroSection() {
 
           <div className="hero-stats">
             <div className="hero-avatars">
-              <img src="/pro06.webp" alt="" className="hero-avatar" />
-              <img src="/pro07.webp" alt="" className="hero-avatar" />
-              <img src="/pro08.webp" alt="" className="hero-avatar" />
-              <img src="/pro09.webp" alt="" className="hero-avatar" />
+              <img src="/pro06.webp" alt="" className="hero-avatar" fetchpriority="high" loading="eager" />
+              <img src="/pro07.webp" alt="" className="hero-avatar" fetchpriority="high" loading="eager" />
+              <img src="/pro08.webp" alt="" className="hero-avatar" fetchpriority="high" loading="eager" />
+              <img src="/pro09.webp" alt="" className="hero-avatar" fetchpriority="high" loading="eager" />
             </div>
             <p className="hero-stats-text">
               <span className="hero-stats-highlight">50K+</span> developers building real-world skills

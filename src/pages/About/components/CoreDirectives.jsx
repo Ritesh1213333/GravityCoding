@@ -90,7 +90,7 @@ const CoreDirectives = () => {
             
             <div className="card-image-wrapper">
               <img 
-                src="https://images.unsplash.com/photo-1737265320236-a4871e9d9df2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                src="https://images.unsplash.com/photo-1737265320236-a4871e9d9df2?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 alt="3D Asset" 
                 className="cube-3d-img" 
               />

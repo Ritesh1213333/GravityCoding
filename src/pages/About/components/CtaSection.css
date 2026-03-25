@@ -52,13 +52,26 @@
 
 .cta-title-accent {
   color: transparent;
-  background-image: url("https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bHVmYXF6Y3VzNzc5cDFxYWVkMm9lb21kamt6b3FreDE4bmc4dWFjciZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/3o7WIstFhcFoyivPnW/giphy.gif");
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(
+    90deg, 
+    #5249F6 0%, 
+    #9B8FFF 25%, 
+    #FFFFFF 50%, 
+    #9B8FFF 75%, 
+    #5249F6 100%
+  );
+  background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   filter: drop-shadow(0 0 20px rgba(82, 73, 246, 0.4));
   margin-top: -0.05em; /* snug lines */
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
 }
 
 @keyframes textShine {
