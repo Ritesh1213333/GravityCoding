@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-import './Footer.css'
 import footerLogo from '../../../assests/Gc_logo.png'
-=======
-import footerLogo from '../../../assests/Group 2 1.png'
->>>>>>> 05383c0c5308d42748e02a12870cfba212f2b27a
 import { Link } from 'react-router-dom'
 import { FaInstagram, FaLinkedinIn, FaDiscord, FaYoutube, FaTwitter, FaFacebookF, FaGithub } from 'react-icons/fa'
 

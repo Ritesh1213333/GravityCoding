@@ -1,13 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
-<<<<<<< HEAD
-import { Link } from 'react-router-dom'
-import logo from '../../../assests/Gc_logo.png'
-import './Navbar.css'
-=======
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
-import logo from '../../../assests/Group 2 1.png'
->>>>>>> 05383c0c5308d42748e02a12870cfba212f2b27a
+import logo from '../../../assests/Gc_logo.png'
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
