@@ -175,7 +175,7 @@ const Contact = () => {
     if (formData.subject === 'Payment Problem' && !formData.orderId.trim()) return showError("Please enter your Order ID.");
     if (!formData.message.trim()) return showError("Please describe your issue or question.");
 
-    // Simulate Success
+    // Send to Backend
     const loadingToastId = toast.loading("Sending your message...", {
       style: {
         background: '#14161a',
@@ -184,21 +184,47 @@ const Contact = () => {
       }
     });
 
-    setTimeout(() => {
-      toast.dismiss(loadingToastId);
-      
-      toast.custom((t) => (
-        <CustomToast 
-          t={t} 
-          type="success" 
-          title="Successfully Sent!" 
-          message="Your request has been received. Our team will contact you within 24 hours." 
-        />
-      ), { position: 'top-right', duration: 5000 });
+    const sendData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/inquiries', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            fullName: formData.name,
+            email: formData.email,
+            phone: `${formData.countryCode} ${formData.phone}`,
+            subject: formData.subject,
+            courseName: formData.courseName,
+            message: formData.message
+          }),
+        });
 
-      setIsSubmitted(true);
-    }, 1500);
+        if (response.ok) {
+          toast.dismiss(loadingToastId);
+          toast.custom((t) => (
+            <CustomToast 
+              t={t} 
+              type="success" 
+              title="Successfully Sent!" 
+              message="Your request has been received. Our team will contact you within 24 hours." 
+            />
+          ), { position: 'top-right', duration: 5000 });
+          setIsSubmitted(true);
+        } else {
+          toast.dismiss(loadingToastId);
+          showError("Failed to send message. Please try again.");
+        }
+      } catch (error) {
+        toast.dismiss(loadingToastId);
+        showError("Server error. Please check your connection.");
+      }
+    };
+
+    sendData();
   };
+
 
   return (
     <div className="w-full min-h-screen bg-[#0b0c10] flex justify-center items-start px-5 pt-[120px] pb-[80px] text-[#e2e8f0]">
