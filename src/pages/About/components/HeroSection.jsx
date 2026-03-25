@@ -23,7 +23,7 @@ const HeroSection = () => {
         <h1 className="hero-title">
           <div className="title-line">
             <span className="title-solid">THE</span>{" "}
-            <span className="title-outline">KINETIC</span>
+            <span className="title-outline">CODING</span>
           </div>
           <div className="title-line">
             <span className="title-solid">REVOLUTION</span>
@@ -32,10 +32,9 @@ const HeroSection = () => {
         
         <div className="hero-footer">
           <p className="hero-description">
-            Gravity Coding is a high-performance engine for the next<br/>
-            generation of digital architects. We don't just teach code; we<br/>
-            accelerate the evolution of the human developer through<br/>
-            refined intensity.
+            Gravity Coding is a high-performance learning ecosystem built for the next
+            generation of developers. We don’t just teach code — we build
+            real-world skills, powerful projects, and unstoppable problem solvers.
           </p>
           <div className="line-connector"></div>
           <div className="scroll-btn-box">

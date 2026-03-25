@@ -10,7 +10,7 @@ const CoreDirectives = () => {
         <div className="directives-header">
           <h2 className="directives-title">CORE DIRECTIVES</h2>
           <div className="directives-sub-header">
-            <span className="sub-title-left">SYSTEM ARCHITECTURES & PHILOSOPHIES</span>
+            <span className="sub-title-left">SYSTEM ARCHITECTURE & LEARNING PHILOSOPHY</span>
             <span className="sub-title-right">[ STATUS: OPERATIONAL ]</span>
           </div>
         </div>
@@ -29,7 +29,7 @@ const CoreDirectives = () => {
               </div>
               <h3 className="card-title">VELOCITY OVER THEORY</h3>
               <p className="card-text">
-                We prioritize rapid prototyping and production-grade execution. Our curriculum is built for high-speed deployment in the Gravity Forge ecosystem.
+                Execution beats explanation. We train developers to build fast, iterate faster, and ship real-world solutions — not just memorize concepts.
               </p>
             </div>
           </BorderGlow>
@@ -49,7 +49,7 @@ const CoreDirectives = () => {
               </div>
               <h3 className="card-title">NEURAL NETWORKING</h3>
               <p className="card-text">
-                Coding is a team sport. We cultivate high-bandwidth peer collaboration environments that mirror modern tech stacks.
+                Growth is exponential when minds connect. We create high-performance communities where developers collaborate, solve problems, and evolve together.
               </p>
             </div>
           </BorderGlow>
@@ -66,7 +66,7 @@ const CoreDirectives = () => {
               </div>
               <h3 className="card-title">TERMINAL MASTERY</h3>
               <p className="card-text">
-                Going deep into the kernel. We teach fundamentals from the CLI up, ensuring zero platform dependency.
+                No shortcuts. No surface-level learning. We go deep into fundamentals — from logic to system-level understanding — building developers who truly understand what they write.
               </p>
             </div>
           </BorderGlow>
@@ -84,7 +84,7 @@ const CoreDirectives = () => {
               </div>
               <h3 className="card-title">FUTURE PROOFING</h3>
               <p className="card-text">
-                Our research division constantly updates our 'Core Stack' to include emerging AI-driven development patterns.
+                Technology evolves. We evolve faster. Our ecosystem continuously adapts to modern stacks, AI-driven workflows, and industry demands — keeping you ahead of the curve.
               </p>
             </div>
             
