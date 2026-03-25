@@ -60,8 +60,9 @@
 }
 
 .about-hero-section .title-outline {
-  color: transparent;
-  -webkit-text-stroke: 1px #2A3B8C; 
+  color: rgba(74, 108, 247, 0.05); /* Faint fill for better depth */
+  -webkit-text-stroke: 1.5px #4A6CF7; /* Brighter, slightly thicker stroke */
+  text-shadow: 0 0 15px rgba(74, 108, 247, 0.3); /* Subtle glow effect */
 }
 
 .hero-footer {

@@ -84,9 +84,28 @@
   max-width: 90%;
 }
 
+
+.stats-tagline {
+  margin-top: 6rem;
+  border-top: 1px solid #1A223E;
+  padding-top: 2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #E2E8F0;
+  text-align: left;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
 @media (max-width: 900px) {
   .stats-grid {
     grid-template-columns: 1fr;
     gap: 5rem;
+  }
+
+  .stats-tagline {
+    margin-top: 4rem;
+    font-size: 1.1rem;
   }
 }
