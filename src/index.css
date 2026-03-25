@@ -1,16 +1,18 @@
-* {
+@import "tailwindcss";
+
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+ */
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   min-height: 100vh;
   background: #000;
   color: #fff;
@@ -26,8 +28,21 @@ button {
   font-family: inherit;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+@keyframes toast-enter {
+  from { transform: scale(0.9) translateY(-10px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
 }
+
+@keyframes toast-leave {
+  from { transform: scale(1) translateY(0); opacity: 1; }
+  to { transform: scale(0.9) translateY(-10px); opacity: 0; }
+}
+
+.animate-enter {
+  animation: toast-enter 0.3s cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
+.animate-leave {
+  animation: toast-leave 0.2s cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
