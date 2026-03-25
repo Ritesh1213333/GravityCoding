@@ -4,6 +4,8 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { Toaster, toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { countryCodes } from '../../utils/countryCodes';
+import API_URL from '../../utils/url';
+
 
 const CustomToast = ({ t, type, title, message }) => {
   const iconMap = {
@@ -186,11 +188,12 @@ const Contact = () => {
 
     const sendData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/inquiries', {
+        const response = await fetch(`${API_URL}/inquiries`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
+
           body: JSON.stringify({
             fullName: formData.name,
             email: formData.email,

@@ -10,6 +10,8 @@ import {
   UserPlus,
   ChevronRight
 } from 'lucide-react'
+import API_URL from '../../utils/url'
+
 
 const AdminDashboard = () => {
   const [stats, setStats] = useState({
@@ -24,9 +26,10 @@ const AdminDashboard = () => {
     const fetchStats = async () => {
       const token = localStorage.getItem('adminToken')
       try {
-        const response = await fetch('http://localhost:5000/api/inquiries', {
+        const response = await fetch(`${API_URL}/inquiries`, {
           headers: { 'Authorization': `Bearer ${token}` },
         })
+
         if (response.ok) {
           const data = await response.json()
           if (Array.isArray(data)) {

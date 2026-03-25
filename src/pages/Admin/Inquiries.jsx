@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import AdminLayout from '../../components/admin/AdminLayout'
 import toast from 'react-hot-toast'
-import { Trash2, CheckCircle, Clock, Search, Filter, MoreVertical } from 'lucide-react'
+import { Trash2, CheckCircle, Clock, Search, Filter, MoreVertical, X } from 'lucide-react'
+import API_URL from '../../utils/url'
+
 
 const Inquiries = () => {
   const [inquiries, setInquiries] = useState([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
+  const [selectedInquiry, setSelectedInquiry] = useState(null)
 
   useEffect(() => {
     fetchInquiries()
@@ -15,9 +18,10 @@ const Inquiries = () => {
   const fetchInquiries = async () => {
     const token = localStorage.getItem('adminToken')
     try {
-      const response = await fetch('http://localhost:5000/api/inquiries', {
+      const response = await fetch(`${API_URL}/inquiries`, {
         headers: { 'Authorization': `Bearer ${token}` },
       })
+
       if (response.ok) {
         const data = await response.json()
         setInquiries(data)
@@ -33,13 +37,15 @@ const Inquiries = () => {
     if (!window.confirm('Delete this inquiry?')) return
     const token = localStorage.getItem('adminToken')
     try {
-      const response = await fetch(`http://localhost:5000/api/inquiries/${id}`, {
+      const response = await fetch(`${API_URL}/inquiries/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` },
       })
+
       if (response.ok) {
         setInquiries(inquiries.filter((inq) => inq._id !== id))
         toast.success('Inquiry deleted')
+        setSelectedInquiry(null)
       }
     } catch (error) {
       toast.error('Action failed')
@@ -49,7 +55,7 @@ const Inquiries = () => {
   const handleStatusChange = async (id, status) => {
     const token = localStorage.getItem('adminToken')
     try {
-      const response = await fetch(`http://localhost:5000/api/inquiries/${id}`, {
+      const response = await fetch(`${API_URL}/inquiries/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -60,6 +66,7 @@ const Inquiries = () => {
       if (response.ok) {
         const updated = await response.json()
         setInquiries(inquiries.map((inq) => inq._id === id ? updated : inq))
+        setSelectedInquiry(updated)
         toast.success(`Status updated to ${status}`)
       }
     } catch (error) {
@@ -72,6 +79,90 @@ const Inquiries = () => {
     inq.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
     inq.subject.toLowerCase().includes(searchTerm.toLowerCase())
   )
+
+const InquiryModal = ({ inquiry, onClose, onStatusChange, onDelete }) => {
+  if (!inquiry) return null;
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <div 
+        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+        onClick={onClose}
+      />
+      <div className="relative w-full max-w-2xl bg-[#111] border border-white/10 rounded-[32px] overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
+        <div className="p-8">
+          <div className="flex justify-between items-start mb-8">
+            <div className="flex items-center gap-4">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#497DFF] to-[#3269f5] flex items-center justify-center text-2xl font-bold text-white shadow-lg shadow-[#497DFF]/20">
+                {inquiry.fullName?.charAt(0) || '?'}
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-white leading-tight">{inquiry.fullName}</h2>
+                <p className="text-white/40 text-sm">{inquiry.email}</p>
+              </div>
+            </div>
+            <button 
+              onClick={onClose}
+              className="p-2 hover:bg-white/10 rounded-xl text-white/30 hover:text-white transition-all bg-white/5 border border-white/5"
+            >
+              <X size={20} /> 
+            </button>
+          </div>
+
+          <div className="grid grid-cols-2 gap-8 mb-8">
+            <div className="space-y-1">
+              <p className="text-[10px] font-bold text-white/20 uppercase tracking-widest">Phone Number</p>
+              <p className="text-white font-medium">{inquiry.phone || 'N/A'}</p>
+            </div>
+            <div className="space-y-1">
+              <p className="text-[10px] font-bold text-white/20 uppercase tracking-widest">Course Interest</p>
+              <p className="text-[#497DFF] font-medium">{inquiry.courseName || 'General Inquiry'}</p>
+            </div>
+            <div className="space-y-1">
+              <p className="text-[10px] font-bold text-white/20 uppercase tracking-widest">Inquiry Date</p>
+              <p className="text-white/60 font-medium">{new Date(inquiry.createdAt).toLocaleDateString()}</p>
+            </div>
+            <div className="space-y-1">
+              <p className="text-[10px] font-bold text-white/20 uppercase tracking-widest">Current Status</p>
+              <span className={`inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest ${
+                inquiry.status === 'resolved' ? 'bg-green-500/10 text-green-500 border border-green-500/20' : 
+                inquiry.status === 'contacted' ? 'bg-blue-500/10 text-blue-500 border border-blue-500/20' : 
+                'bg-yellow-500/10 text-yellow-500 border border-yellow-500/20'
+              }`}>
+                {inquiry.status}
+              </span>
+            </div>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 mb-8">
+            <p className="text-[10px] font-bold text-white/20 uppercase tracking-widest mb-3">Message Body</p>
+            <p className="text-white/80 leading-relaxed text-sm whitespace-pre-wrap">{inquiry.message}</p>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <button 
+              onClick={() => onStatusChange(inquiry._id, inquiry.status === 'resolved' ? 'pending' : 'resolved')}
+              className={`flex-1 py-3.5 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 ${
+                inquiry.status === 'resolved' 
+                ? 'bg-yellow-500/10 text-yellow-500 hover:bg-yellow-500/20' 
+                : 'bg-green-500 text-white hover:brightness-110 shadow-lg shadow-green-500/20'
+              }`}
+            >
+              <CheckCircle size={18} />
+              {inquiry.status === 'resolved' ? 'Mark Pending' : 'Mark Resolved'}
+            </button>
+            <button 
+              onClick={() => onDelete(inquiry._id)}
+              className="p-3.5 bg-red-500/10 text-red-500 hover:bg-red-500/20 rounded-xl transition-all border border-red-500/10"
+            >
+              <Trash2 size={18} />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
   return (
     <AdminLayout>
@@ -116,7 +207,11 @@ const Inquiries = () => {
                 </tr>
               ) : (
                 filteredInquiries.map((inq) => (
-                  <tr key={inq._id} className="hover:bg-white/[0.02] transition-colors group">
+                  <tr 
+                    key={inq._id} 
+                    onClick={() => setSelectedInquiry(inq)}
+                    className="hover:bg-white/[0.04] transition-all cursor-pointer group"
+                  >
                     <td className="px-6 py-6">
                       <div className="flex items-center gap-4">
                         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-white/10 to-transparent flex items-center justify-center text-white font-bold border border-white/10">
@@ -131,7 +226,7 @@ const Inquiries = () => {
                     <td className="px-6 py-6 font-medium text-white/80">
                       <div className="flex flex-col gap-1">
                         <span className="text-white">{inq.subject}</span>
-                        {inq.courseName && <span className="text-[#497DFF] text-xs">{inq.courseName}</span>}
+                        {inq.courseName && <span className="text-[#497DFF] text-xs font-semibold">{inq.courseName}</span>}
                       </div>
                     </td>
                     <td className="px-6 py-6">
@@ -146,13 +241,19 @@ const Inquiries = () => {
                     <td className="px-6 py-6 text-right">
                       <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                         <button 
-                          onClick={() => handleStatusChange(inq._id, inq.status === 'resolved' ? 'pending' : 'resolved')}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleStatusChange(inq._id, inq.status === 'resolved' ? 'pending' : 'resolved');
+                          }}
                           className="p-2.5 bg-white/5 hover:bg-green-500/10 text-white/30 hover:text-green-500 rounded-xl transition-all"
                         >
                           <CheckCircle size={18} />
                         </button>
                         <button 
-                          onClick={() => handleDelete(inq._id)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleDelete(inq._id);
+                          }}
                           className="p-2.5 bg-white/5 hover:bg-red-500/10 text-white/30 hover:text-red-500 rounded-xl transition-all"
                         >
                           <Trash2 size={18} />
@@ -169,8 +270,17 @@ const Inquiries = () => {
           </table>
         </div>
       </div>
+      
+      {/* Modal Overlay */}
+      <InquiryModal 
+        inquiry={selectedInquiry} 
+        onClose={() => setSelectedInquiry(null)} 
+        onStatusChange={handleStatusChange}
+        onDelete={handleDelete}
+      />
     </AdminLayout>
   )
 }
+
 
 export default Inquiries
