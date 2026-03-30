@@ -51,7 +51,7 @@ function Navbar() {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-[1002] flex justify-between items-center px-6 md:px-28 py-5 bg-black/40 backdrop-blur-xl transition-transform duration-400 ease-in-out ${hidden ? '-translate-y-full shadow-none' : 'translate-y-0 shadow-lg shadow-black/10'}`}>
+      <header className={`fixed top-0 left-0 right-0 z-1002 flex justify-between items-center px-6 md:px-28 py-5 bg-black/40 backdrop-blur-xl transition-transform duration-400 ease-in-out ${hidden ? '-translate-y-full shadow-none' : 'translate-y-0 shadow-lg shadow-black/10'}`}>
         <Link to="/" className="flex items-center no-underline outline-none scale-100 active:scale-95 transition-transform">
           <img src={logo} alt="Gravity Coding" className="h-[36px] md:h-[40px] w-auto object-contain block" />
         </Link>
@@ -87,7 +87,7 @@ function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden relative flex items-center justify-center w-10 h-10 bg-white/5 hover:bg-white/10 rounded-lg border-none cursor-pointer z-[1003] outline-none transition-colors"
+          className="lg:hidden relative flex items-center justify-center w-10 h-10 bg-white/5 hover:bg-white/10 rounded-lg border-none cursor-pointer z-1003 outline-none transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
         >
@@ -101,7 +101,7 @@ function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-[1001] bg-[#0a0a0a] transition-all duration-500 ease-in-out lg:hidden ${menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+        className={`fixed inset-0 z-1001 bg-[#0a0a0a] transition-all duration-500 ease-in-out lg:hidden ${menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
         aria-hidden={!menuOpen}
       >
         <div className="min-h-full flex flex-col items-start justify-start px-10 py-32">
